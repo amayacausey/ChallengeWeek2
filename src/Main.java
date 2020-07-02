@@ -158,7 +158,7 @@ public class Main {
 
        ArrayList <Distancing> distancings = new ArrayList<>();
         String reTry = "";
-        //while (!reTry.equals("n")) {
+        while (!reTry.equals("n")) {
 
             if (userDistance.equalsIgnoreCase("y")) {
                 System.out.println("What is his/her name?");
@@ -169,11 +169,18 @@ public class Main {
                 Contact.setDistanceEmail(sc.nextLine());
                 distancings.add(Contact);
                 System.out.println("Have you ran into anyone else (y/n)?");
-                String checkDist = sc.nextLine();
+                for (Distancing distancing : distancings) {
+                    System.out.println(distancing.toString());
+                }
 
-            //System.out.println("Have you ran into anyone else (y/n)?");
-           // reTry = sc.nextLine();
 
+                System.out.println("Have you ran into anyone else (y/n)?");
+                reTry = sc.nextLine();
+            }
+        }
+
+
+/*
         if (checkDist.equalsIgnoreCase("y")) {
             Distancing anotherContact = new Distancing();
             System.out.println("What is his/her name?");
@@ -184,7 +191,11 @@ public class Main {
             anotherContact.setDistanceEmail(sc.nextLine());
             System.out.println("Have you ran into anyone else (y/n)?");
             distancings.add(anotherContact);
-        }}
+            for (Distancing distancing : distancings)
+            {
+                System.out.println(distancing.toString());
+            }
+        }}*/
 
 
 
