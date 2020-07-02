@@ -156,40 +156,35 @@ public class Main {
         System.out.println("Has " + Patient.getName() + " met or run into anyone (y/n)");
         String userDistance = sc.nextLine();
 
+       ArrayList <Distancing> distancings = new ArrayList<>();
         String reTry = "";
-        if (userDistance.equalsIgnoreCase("y")) {
-            System.out.println("What is his/her name?");
-            Contact.setDistanceName(sc.nextLine());
-            System.out.println("What is his/her phone number?");
-            Contact.setDistanceNum(sc.nextLine());
-            System.out.println("What is his/her email?");
-            Contact.setDistanceEmail(sc.nextLine());
-            System.out.println("Have you ran into anyone else (y/n)?");}
-            else{
-                Contact.setDistanceName("Nothing was entered");
-                Contact.setDistanceNum("Nothing was entered");
-                Contact.setDistanceEmail("Nothing was entered");
-            }
-            String distance=sc.nextLine();
-            if (distance.equalsIgnoreCase("y")) {
+        //while (!reTry.equals("n")) {
 
+            if (userDistance.equalsIgnoreCase("y")) {
                 System.out.println("What is his/her name?");
-                Contact.setDistanceName2(sc.nextLine());
+                Contact.setDistanceName(sc.nextLine());
                 System.out.println("What is his/her phone number?");
-                Contact.setDistanceNum2(sc.nextLine());
+                Contact.setDistanceNum(sc.nextLine());
                 System.out.println("What is his/her email?");
-                Contact.setDistanceEmail2(sc.nextLine());
+                Contact.setDistanceEmail(sc.nextLine());
+                distancings.add(Contact);
                 System.out.println("Have you ran into anyone else (y/n)?");
-                String distance2=sc.nextLine();
-                if (distance2.equalsIgnoreCase("y")) {
-                    System.out.println("Write down any additional people that may have been exposed");
-                    Contact.setExtraC(sc.nextLine());
-                }
-            }else {
-                Contact.setDistanceName2("Nothing was entered");
-                Contact.setDistanceNum2("Nothing was entered");
-                Contact.setDistanceEmail2("Nothing was entered");
-            }
+                String checkDist = sc.nextLine();
+
+            //System.out.println("Have you ran into anyone else (y/n)?");
+           // reTry = sc.nextLine();
+
+        if (checkDist.equalsIgnoreCase("y")) {
+            Distancing anotherContact = new Distancing();
+            System.out.println("What is his/her name?");
+            anotherContact.setDistanceName(sc.nextLine());
+            System.out.println("What is his/her phone number?");
+            anotherContact.setDistanceNum(sc.nextLine());
+            System.out.println("What is his/her email?");
+            anotherContact.setDistanceEmail(sc.nextLine());
+            System.out.println("Have you ran into anyone else (y/n)?");
+            distancings.add(anotherContact);
+        }}
 
 
 
@@ -199,10 +194,15 @@ public class Main {
         System.out.println("------------------------------");
         System.out.println(Patient.toString());
         System.out.println("------------------------------");
-        System.out.println(condition.toString());
+       // System.out.println(condition.toString());
         System.out.println("------------------------------");
-        System.out.print(Contact.toString());
+        //System.out.print(Contact.toString());
         System.out.println("\n------------------------------");
-        System.out.print(Contact.toString2());
-        System.out.print(Contact.getExtraC());
+       // System.out.print(Contact.toString2());
+        for (Distancing distancing : distancings)
+        {
+            System.out.println(distancing.toString());
+        }
+
+
     }}

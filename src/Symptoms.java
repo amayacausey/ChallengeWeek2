@@ -89,7 +89,7 @@ public class Symptoms extends ContactInformation{
 
     }
 
-    public void setCough(String Cough) {
+    public void setCough(String cough) {
         this.cough=cough;;
     }
 
@@ -124,7 +124,7 @@ public class Symptoms extends ContactInformation{
     {
         return this.fever;
     }
-    public void setTired(String tiredness){
+    public void setTired(String tired){
         this.tired=tired;
     }
     public String getTired()
