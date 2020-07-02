@@ -194,7 +194,7 @@ public class Main {
         System.out.println("------------------------------");
         System.out.println(Patient.toString());
         System.out.println("------------------------------");
-       // System.out.println(condition.toString());
+        System.out.println(condition.toString());
         System.out.println("------------------------------");
         //System.out.print(Contact.toString());
         System.out.println("\n------------------------------");
